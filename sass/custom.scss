@@ -1,0 +1,81 @@
+// MIXIN
+@mixin clearspace {
+	padding: 0px;
+	margin: 0px auto;
+} 
+@mixin roundcorners($radius: 50%) {
+	border-radius: $radius;
+	-o-border-radius: $radius;
+	-ms-border-radius: $radius;
+	-moz-border-radius: $radius;
+	-webkit-border-radius: $radius;	
+}
+@mixin transition($duration: 500ms) {
+	transition: all $duration ease-IN;
+	-o-transition: all $duration ease;
+	-ms-transition: all $duration ease;
+	-moz-transition: all $duration ease;
+	-webkit-transition: all $duration ease;
+}
+@mixin shadow($thickness: 25px) {
+	box-shadow: 0 0 $thickness 1px rgba(#000, 0.1);
+	-o-box-shadow: 0 0 $thickness 1px rgba(#000, 0.1);
+	-ms-box-shadow: 0 0 $thickness 1px rgba(#000, 0.1);
+	-moz-box-shadow: 0 0 $thickness 1px rgba(#000, 0.1);
+	-webkit-box-shadow: 0 0 $thickness 1px rgba(#000, 0.1);
+}
+
+
+// DEFAULT
+body {
+  background: url("../images/background.png") no-repeat top center #DDD;
+}
+h1,h2,h3,h4,h5,h6 {
+	@include clearspace();
+	padding: 10px 0px;
+}
+.nospace {
+	@include clearspace();
+}
+
+
+// CONTENT
+.logo {
+	text-align: center;
+	margin-top: 190px;
+	img {
+		max-width: 200px;
+	}
+}
+.follow {
+	text-align: center;
+	font-size: 1.75em;
+	ul {
+		list-style: none;
+		@include clearspace();
+		li {
+			display: inline-block;
+			a {
+				@include transition(300ms);
+				color: #777;
+				&:hover {
+					color: #A00;
+				}
+			}
+		}
+	}
+}
+.subscribe {
+	@include clearspace();
+	max-width: 500px;
+	text-align: center;
+	input {
+		@include shadow();
+		padding: 20px;
+		width: 100%;
+	}
+	button {
+		padding: 10px 0px;
+		width: 100%;
+	}
+}
