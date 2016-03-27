@@ -69,6 +69,7 @@ h1,h2,h3,h4,h5,h6 {
 	@include clearspace();
 	max-width: 500px;
 	text-align: center;
+	margin-bottom: 30px;
 	input {
 		@include shadow();
 		padding: 20px;
@@ -77,5 +78,32 @@ h1,h2,h3,h4,h5,h6 {
 	button {
 		padding: 10px 0px;
 		width: 100%;
+	}
+}
+.footer {
+	text-align: center;
+	margin-top: 50px;
+	margin-bottom: 30px;
+	font-size: 0.9em;
+}
+
+
+
+
+// MEDIA QUERY
+@media (min-width: 1200px) { // LG
+
+}
+@media (min-width: 992px) and (max-width: 1199px) { // MD
+
+}
+@media (min-width: 768px) and (max-width: 991px) { // SM
+	.subscribe {
+		max-width: 90%;
+	}
+}
+@media (max-width: 767px) { // XS
+	.subscribe {
+		max-width: 90%;
 	}
 }
